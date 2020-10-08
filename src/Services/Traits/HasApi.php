@@ -26,7 +26,7 @@ trait HasApi
         }
 
         if (isset($values['query'])){
-            $api .= $api.'?'.http_build_query($values['query']) ;
+            $api .= '?'.http_build_query($values['query']) ;
         }
 
 

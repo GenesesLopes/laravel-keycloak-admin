@@ -4,8 +4,6 @@ namespace KeycloakAdm\Services;
 
 use KeycloakAdm\Auth\ClientAuthService;
 use GuzzleHttp\Client as HttpClient;
-use Illuminate\Http\Request;
-
 
 class AdminService
 {
