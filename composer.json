@@ -2,7 +2,7 @@
     "name": "srlopes/laravel-keycloak-admin",
     "description": "This package supports Keycloak administrator client API, authenticating with username and password or using the security key (client_secret)",
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": ">=6.3"
     },
     "license": "MIT",
     "authors": [
