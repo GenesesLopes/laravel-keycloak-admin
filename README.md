@@ -42,7 +42,7 @@ Package has provided services as below :
 - role
 - client
 - clientRole
-- groups (get, update, count, delete)
+- group (get, update, count, delete)
 
 Publish the config file:
 
