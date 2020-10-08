@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnikoei\Auth;
+namespace KeycloakAdm\Auth;
 
 
 use GuzzleHttp\Client;
@@ -16,47 +16,51 @@ class ClientAuthService
     {
 
         $this->client = new Client();
-
     }
 
 
     public function getToken()
     {
 
-        return
-//            session()->get('keycloak.client.auth')['access_token']
-//            ??
-            $this->getAuthorizationToken()['access_token'];
-
+        return $this->getAuthorizationToken()['access_token'];
     }
 
 
-    public function getAuthorizationToken() : array
+    public function getAuthorizationToken(): array
     {
 
         $api = config('keycloakAdmin.api.client.token');
 
-        $response = $this->client->post( $api , $this->getOptions() );
+        $response = $this->client->post($api, $this->getOptions());
 
-        $this->saveCredentials( $credentials = json_decode( $response->getBody()->getContents() ,true) );
+        $this->saveCredentials($credentials = json_decode($response->getBody()->getContents(), true));
 
         return $credentials;
-
     }
 
 
     public function getOptions()
     {
-        return $options = [
+        if (!is_null(config('keycloakAdmin.client.secret'))) {
+            $form_params = [
+                'grant_type' => 'client_credentials',
+                'client_id' => config('keycloakAdmin.client.id'),
+                'client_secret' => config('keycloakAdmin.client.secret'),
+            ];
+        } else {
+            $form_params = [
+                'grant_type' => 'password',
+                'client_id' => 'admin-cli',
+                'username' => config('keycloakAdmin.client.username'),
+                'password' => config('keycloakAdmin.client.password'),
+            ];
+        }
+        return [
 
             'headers' => [
                 'Content-Type' => 'application/x-www-form-urlencoded'
             ],
-            'form_params' => [
-                'grant_type' => 'client_credentials',
-                'client_id' => config('keycloakAdmin.client.id'),
-                'client_secret' => config('keycloakAdmin.client.secret') ,
-            ]
+            'form_params' => $form_params
 
         ];
     }
@@ -78,5 +82,4 @@ class ClientAuthService
 
         session()->save();
     }
-
 }

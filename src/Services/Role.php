@@ -1,9 +1,9 @@
 <?php
 
-namespace Mnikoei\Services;
+namespace KeycloakAdm\Services;
 
-use Mnikoei\Auth\ClientAuthService;
-use Mnikoei\Services\Traits\HasApi;
+use KeycloakAdm\Auth\ClientAuthService;
+use KeycloakAdm\Services\Traits\HasApi;
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Arr;
 

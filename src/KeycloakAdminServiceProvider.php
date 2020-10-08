@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnikoei;
+namespace KeycloakAdm;
 
-use Mnikoei\Services\AdminService;
+use KeycloakAdm\Services\AdminService;
 use Illuminate\Support\ServiceProvider;
 
 class KeycloakAdminServiceProvider extends ServiceProvider

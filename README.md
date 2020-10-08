@@ -1,7 +1,7 @@
 # Installtion
 
 ```
-composer require mnikoei/laravel-keycloak-admin
+composer require srlopes/laravel-keycloak-admin
 ```
 
 # laravel-keycloak-admin
@@ -17,15 +17,19 @@ KEYCLOAK_BASE_URL=http://keycloak-domain.example/auth
 KEYCLOAK_REALM=                
 
 KEYCLOAK_REALM_PUBLIC_KEY=     # realm settings -> keys 
+      
+# Choose to fill in user name and password or client_id and client_secret
 
-KEYCLOAK_CLIENT_ID=            
+KEYCLOAK_USERNAME=
+
+KEYCLOAK_PASSWORD=
+
+KEYCLOAK_CLIENT_ID=      
 
 KEYCLOAK_CLIENT_SECRET=        # clients -> your_client -> credentials 
 
 KEYCLOAK_ADMIN_BASE_URL=${KEYCLOAK_BASE_URL}/admin/realms/${KEYCLOAK_REALM} 
 ```
-
-
 
 # Enable realm managment
 
@@ -65,7 +69,7 @@ KeycloakAdmin::serviceName()->apiName($parameters)
 
 keycloakAdmin::user()->create([
       
-     'body' => [  // https://www.keycloak.org/docs-api/7.0/rest-api/index.html#_userrepresentation
+     'body' => [  // https://www.keycloak.org/docs-api/11.0/rest-api/index.html#_userrepresentation
              
              'username' => 'foo'
               
@@ -79,7 +83,7 @@ keycloakAdmin::user()->update([
 
      'id' => 'user_id',
 
-     'body' => [  // https://www.keycloak.org/docs-api/7.0/rest-api/index.html#_userrepresentation
+     'body' => [  // https://www.keycloak.org/docs-api/11.0/rest-api/index.html#_userrepresentation
              
              'username' => 'foo'
               
@@ -96,4 +100,4 @@ keycloakAdmin::role()->get([
 ]);
 ```
 
-All other api calls are same as examples just need to see required parameters for every api in https://www.keycloak.org/docs-api/7.0/rest-api/index.html
+All other api calls are same as examples just need to see required parameters for every api in https://www.keycloak.org/docs-api/11.0/rest-api/index.html

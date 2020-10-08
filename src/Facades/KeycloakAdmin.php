@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnikoei\Facades;
+namespace KeycloakAdm\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,6 +1,6 @@
 {
-    "name": "mnikoei/laravel-keycloak-admin",
-    "description": "This package supports Keycloak admin client api`s",
+    "name": "srlopes/laravel-keycloak-admin",
+    "description": "This package supports Keycloak administrator client API, authenticating with username and password or using the security key (client_secret)",
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
@@ -8,19 +8,32 @@
     "authors": [
         {
             "name": "mnikoei",
-            "email": "mohsen.nikoei@gmail.com"
+            "email": "mohsen.nikoei@gmail.com",
+            "role": "developer creator"
+        },
+        {
+            "name": "Gêneses Lopes",
+            "email": "genesesslopes@gmail.com",
+            "homepage": "https://github.com/genesesLopes",
+            "role": "contributing developer"
         }
+    ],
+    "homepage": "https://github.com/GenesesLopes/laravel-keycloak-admin",
+    "keywords": [
+        "laravel",
+        "keycloak",
+        "keycloak adm"
     ],
     "minimum-stability": "dev",
     "autoload" : {
         "psr-4" : {
-            "Mnikoei\\": "src/"
+            "KeycloakAdm\\": "src/"
         }
     },
     "extra" : {
         "laravel" : {
             "providers" : [
-                "Mnikoei\\KeycloakAdminServiceProvider"
+                "KeycloakAdm\\KeycloakAdminServiceProvider"
             ]
         }
     }

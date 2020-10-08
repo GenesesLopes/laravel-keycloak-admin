@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnikoei\Services\Traits;
+namespace KeycloakAdm\Services\Traits;
 
 trait HasApi
 {

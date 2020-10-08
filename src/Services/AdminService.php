@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnikoei\Services;
+namespace KeycloakAdm\Services;
 
-use Mnikoei\Auth\ClientAuthService;
+use KeycloakAdm\Auth\ClientAuthService;
 use GuzzleHttp\Client as HttpClient;
 use Illuminate\Http\Request;
 
