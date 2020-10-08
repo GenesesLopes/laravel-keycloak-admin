@@ -61,7 +61,7 @@ example:
 use KeycloakAdm\Facades\KeycloakAdmin;
 
 
-keycloakAdmin::user()->create([
+KeycloakAdm::user()->create([
 
      'body' => [  // https://www.keycloak.org/docs-api/11.0/rest-api/index.html#_userrepresentation
              'username' => 'foo'
@@ -77,7 +77,7 @@ KeycloakAdmin::user()->all([
 
 
 
-keycloakAdmin::user()->update([
+KeycloakAdm::user()->update([
 
      'id' => 'user_id',
 
@@ -89,7 +89,7 @@ keycloakAdmin::user()->update([
 
 
 
-keycloakAdmin::role()->get([
+KeycloakAdm::role()->get([
 
      'id' => 'role_id'
 
