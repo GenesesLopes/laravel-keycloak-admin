@@ -21,8 +21,7 @@
     "homepage": "https://github.com/GenesesLopes/laravel-keycloak-admin",
     "keywords": [
         "laravel",
-        "keycloak",
-        "keycloak adm"
+        "keycloak"
     ],
     "minimum-stability": "dev",
     "autoload" : {
