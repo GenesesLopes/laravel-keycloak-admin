@@ -40,6 +40,7 @@ class AdminService
            'Role' => Role::class,
            'Client' => Client::class,
            'ClientRole' => ClientRole::class,
+           'Group' => Group::class,
         ];
 
     }
@@ -65,6 +66,11 @@ class AdminService
     public function clientRole()
     {
         return $this->getService('ClientRole');
+    }
+
+    public function group()
+    {
+        return $this->getService('Group');
     }
 
 }

@@ -179,6 +179,33 @@ return [
                 'api' => "{$baseUrl}/roles/{role}",
                 'method' => 'delete'
             ],
+        ],
+
+        'group' => [
+            'create' => [
+                'api' => "{$baseUrl}/groups",
+                'method' => 'post'
+            ],
+            'all' => [
+                'api' => "{$baseUrl}/groups",
+                'method' => 'get'
+            ],
+            'get' => [
+                'api' => "{$baseUrl}/groups/{id}",
+                'method' => 'get'
+            ],
+            'counts' => [
+                'api' => "{$baseUrl}/groups/count",
+                'method' => 'get'
+            ],
+            'update' => [
+                'api' => "{$baseUrl}/groups/{id}",
+                'method' => 'put'
+            ],
+            'delete' => [
+                'api' => "{$baseUrl}/groups/{id}",
+                'method' => 'delete'
+            ]
         ]
     ]
 
