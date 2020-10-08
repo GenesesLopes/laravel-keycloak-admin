@@ -12,23 +12,25 @@ Add these environment variables to your .env :
 
 
 ```
-KEYCLOAK_BASE_URL=http://keycloak-domain.example/auth
+KEYCLOAK_ADMIN_BASE_URL=http://keycloak-domain.example/auth
 
-KEYCLOAK_REALM=                
+KEYCLOAK_ADMIN_REALM_LOGIN=
 
-KEYCLOAK_REALM_PUBLIC_KEY=     # realm settings -> keys 
+KEYCLOAK_ADMIN_REALM=
+
+KEYCLOAK_ADMIN_REALM_PUBLIC_KEY=     # realm settings -> keys 
       
 # Choose to fill in user name and password or client_id and client_secret
 
-KEYCLOAK_USERNAME=
+KEYCLOAK_ADMIN_USERNAME=
 
-KEYCLOAK_PASSWORD=
+KEYCLOAK_ADMIN_PASSWORD=
 
-KEYCLOAK_CLIENT_ID=      
+KEYCLOAK_ADMIN_CLIENT_ID=      
 
-KEYCLOAK_CLIENT_SECRET=        # clients -> your_client -> credentials 
+KEYCLOAK_ADMIN_CLIENT_SECRET=        # clients -> your_client -> credentials 
 
-KEYCLOAK_ADMIN_BASE_URL=${KEYCLOAK_BASE_URL}/admin/realms/${KEYCLOAK_REALM} 
+KEYCLOAK_ADMIN_BASE_URL_REALM=${KEYCLOAK_BASE_URL}/admin/realms/${KEYCLOAK_ADMIN_REALM} 
 ```
 
 # Enable realm managment
@@ -36,10 +38,6 @@ KEYCLOAK_ADMIN_BASE_URL=${KEYCLOAK_BASE_URL}/admin/realms/${KEYCLOAK_REALM}
 Go to ```clients -> your_client -> Service Account``` then select realm-managment
 
 from Client Roles list and assign realm-admin to client.
-
-
-
-
 
 
 # available methods : 
