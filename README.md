@@ -53,6 +53,11 @@ Package has provided services as below :
 * clientRole
 
 
+Publish the config file:
+
+````
+php artisan vendor:publish --provider="KeycloakAdm\KeycloakAdminServiceProvider"
+````
 
 
 All api's are in ```config\keycloakAdmin.php```
