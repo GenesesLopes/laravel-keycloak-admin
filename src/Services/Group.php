@@ -32,7 +32,7 @@ class Group
 
         $this->auth = $auth;
         $this->http = $http;
-        $this->api = config('keycloakAdmin.api.user');
+        $this->api = config('keycloakAdmin.api.group');
 
     }
 
