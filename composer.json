@@ -35,5 +35,8 @@
                 "KeycloakAdm\\KeycloakAdminServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.4.0"
     }
 }
