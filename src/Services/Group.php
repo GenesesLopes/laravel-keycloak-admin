@@ -65,7 +65,10 @@ class Group
           return  [
                 'headers' => [
                       'Content-Type' => 'application/json',
-                      'Authorization' => 'Bearer '.$this->auth->getToken()
+                      'Authorization' => 'Bearer '.$this->auth->getToken(),
+                      'Access-Control-Allow-Origin' => '*',
+                      'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
+                      'Access-Control-Allow-Headers' => 'Content-Type, Accept, Authorization, X-Requested-With, Application'
                 ],
                 'json' => $params['body'] ?? null,
 

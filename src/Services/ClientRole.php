@@ -29,28 +29,27 @@ class ClientRole
     protected $auth;
 
 
-    function __construct(ClientAuthService $auth , ClientInterface $http) {
+    function __construct(ClientAuthService $auth, ClientInterface $http)
+    {
 
         $this->auth = $auth;
         $this->http = $http;
         $this->api = config('keycloakAdmin.api.client_roles');
-
     }
 
 
-    public function __call($api , $args)
+    public function __call($api, $args)
     {
 
         $args = Arr::collapse($args);
 
-        list($url , $method) = $this->getApi($api , $args);
+        list($url, $method) = $this->getApi($api, $args);
 
         $response = $this
             ->http
-            ->request($method , $url, $this->createOptions($args));
+            ->request($method, $url, $this->createOptions($args));
 
         return $this->response($response);
-
     }
 
 
@@ -61,12 +60,15 @@ class ClientRole
      * @return array
      */
 
-    public function createOptions(array $params = null) : array
+    public function createOptions(array $params = null): array
     {
         return  [
             'headers' => [
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer '.$this->auth->getToken()
+                'Authorization' => 'Bearer ' . $this->auth->getToken(),
+                'Access-Control-Allow-Origin' => '*',
+                'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
+                'Access-Control-Allow-Headers' => 'Content-Type, Accept, Authorization, X-Requested-With, Application'
             ],
             'json' => $params['body'] ?? null,
         ];
@@ -79,17 +81,15 @@ class ClientRole
 
     public function response($response)
     {
-        if (!empty( $location = $response->getHeader('location') )){
+        if (!empty($location = $response->getHeader('location'))) {
 
-            $url = current($location) ;
+            $url = current($location);
 
             return $this->getByName([
-                'role' => substr( $url , strrpos( $url , '/') + 1 )
+                'role' => substr($url, strrpos($url, '/') + 1)
             ]);
         }
 
-        return json_decode($response->getBody()->getContents() , true) ?: true ;
+        return json_decode($response->getBody()->getContents(), true) ?: true;
     }
-
-
 }
