@@ -58,10 +58,7 @@ class ClientAuthService
         return [
 
             'headers' => [
-                'Content-Type' => 'application/x-www-form-urlencoded',
-                'Access-Control-Allow-Origin' => '*',
-                'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
-                'Access-Control-Allow-Headers' => 'Content-Type, Accept, Authorization, X-Requested-With, Application'
+                'Content-Type' => 'application/x-www-form-urlencoded'
             ],
             'form_params' => $form_params
 
