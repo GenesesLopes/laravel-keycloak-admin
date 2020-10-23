@@ -205,6 +205,10 @@ return [
             'delete' => [
                 'api' => "{$baseUrl}/groups/{id}",
                 'method' => 'delete'
+            ],
+            'members' => [
+                'api' => "{$baseUrl}/groups/{id}/members",
+                'method' => 'get'
             ]
         ]
     ]
