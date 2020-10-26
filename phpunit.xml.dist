@@ -1,20 +1,23 @@
-  
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
          colors="true"
          verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
          processIsolation="true"
          stopOnFailure="false">
     <testsuites>
-        <testsuite>
+        <testsuite name="Test Suite">
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
     <filter>
-        <whitelis processUncoveredFilesFromWhitelist="true">
+        <whitelist>
             <directory suffix=".php">src/</directory>
-        </whitelis>
+        </whitelist>
     </filter>     
     <php>
         <env name="DB_CONNECTION" value="testing"/>
